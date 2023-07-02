@@ -1,0 +1,404 @@
+/* Project Settings */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: var(--main-color) var(--font-color) !important;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;  
+}
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--main-color);
+    letter-spacing: 4px;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+:root{
+    --main-color: rgb(0, 240, 150);
+    --main-colorDr: rgb(0, 255, 180);
+    --main-colorDr2: rgb(0, 175, 123);
+    --main-colorDr3: rgb(0, 197, 138);
+    --second-color: rgb(22, 22, 22);
+    --second-color2: rgb(10, 10, 10);
+    --font-color: rgb(245, 245, 245);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+@media screen and (min-width: 850px) {
+    .container {
+        padding-left: 60px;
+        padding-right: 60px;   
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+button {
+    background: var(--main-color);
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    color: var(--second-color);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: rgba(0, 113, 44, 0.3) 0px 3px 15px;
+    transition: 0.5s;
+    border: 1px solid var(--main-color);
+}
+button:hover {
+    background: var(--main-colorDr3);
+    border: 1px solid var(--main-color);
+    opacity: 0.9;
+    color: var(--second-color2);
+}
+
+
+
+/*  */
+.nav {
+    background-color: var(--second-color);
+    color: var(--font-color);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--main-color);
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+}
+.logo {
+    color: var(--main-color);
+    font-size: 26px;
+    text-decoration: navajowhite;
+    letter-spacing: 4px;
+}
+.nav > div {
+    display: flex;
+    flex-direction: row;
+}
+.nav > div div {
+    width: 50%;
+}
+.right * {
+    padding: 10px;
+    color: var(--font-color);
+    text-decoration: navajowhite;
+    font-size: 18px;
+    line-height: 31px;
+}
+.right{
+    direction: rtl;
+}
+
+.currencyConv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.currencyHold {
+    background-color: var(--second-color);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--font-color);
+    border: 2px solid var(--main-color);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.container select, .container input {
+    padding: 10px 15px;
+    font-size: 17px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    color: var(--second-color);
+    width: 100% !important;
+    background-color: #fff;
+    box-shadow: rgba(0, 113, 44, 0.3) 0px 3px 15px;
+    cursor: pointer;
+}
+.container select{
+    appearance: none;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    /* width: 20em; */
+    height: 2.8em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.6em center / 1.9em, linear-gradient(to left, var(--main-colorDr3) 2.9em, var(--font-color) 3.5em)
+}
+.container option {
+    background-color: var(--font-color);
+}
+.container input {
+    appearance: none;
+    border: 0;
+    outline: 0;
+    /* width: 20em; */
+    height: 2.7em;
+    /* background-color: var(--font-color); */
+    background: linear-gradient(to left, var(--main-colorDr3) 2.9em, var(--font-color) 3.5em)
+}
+
+
+
+.currencyConv p {
+    line-height: 30px;
+    font-size: 20px;
+    color: var(--font-color);
+    letter-spacing: 2px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.currencyConv span {
+    margin-left: 10px;
+    margin-right: 10px;
+    letter-spacing: 1.5px;
+    line-height: 35px;
+}
+.resultBox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-top: 1px solid var(--main-color);
+    padding-top: 20px;
+}
+.box {
+    width: 100%;
+    display: flex;
+}
+
+
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px, 2fr));
+    grid-gap: 15px;
+}
+.column {
+    width: 100%;
+}
+.exchanges {
+    margin-top: 20px;
+    max-height: 930px;
+    overflow-y: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+.exchangeCard {
+    background-color: var(--font-color);
+    border-radius: 6px;
+    border: 2px solid var(--main-colorDr);
+    padding: 15px;
+}
+.exchangeCard h3 {
+    text-align: center;
+    color: var(--main-colorDr2);
+    letter-spacing: 3px;
+}
+.exchangeCard p {
+    color: #000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 810px) {
+    .currencyConv, .resultBox {
+        display: flex;
+        flex-direction: column;
+    }
+    .resultBox .box{
+       width: 100% !important;
+    }
+    .currencyConv p , .resultBox > span{
+        text-align: center;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+    .currencyHold button {
+        width: 100%;
+    }
+}
+
+
+
+
+#wrapper {
+    position: relative;
+    background: var(--second-color);
+    border: 1px solid var(--main-color);
+    box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.71);
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  
+  #chart-bar {
+    position: relative;
+    margin-top: -38px;
+  }
+  
+  .link {
+    position: absolute;
+    bottom: 7px;
+    right: 13px;
+    z-index: 10;
+    color: #ccc;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Helvetica, Arial;
+}
+
+
+
+
+
+
+.notification {
+    width: fit-content;
+    padding: 1.25rem 2rem 1.25rem 1.5rem;
+    text-align: left;
+    border-radius: 4px;
+    position: fixed;
+    top: 72px;
+    left: 20px;
+    color: var(--font-color);
+    font-size: 15px;
+    left: -500px;
+}
+.notification.active{
+    animation: notification 10s;
+}
+
+@keyframes notification{
+    10%{
+        left: 20px;
+    }
+    85%{
+        left: 20px;
+    }
+    100%{
+        left: -500px;
+    }
+}
+.notification.success {
+    box-shadow: 0px 0px 8px rgb(23, 213, 142);
+    background-color: rgb(23, 213, 142);
+}
+.notification.fail {
+    box-shadow: 0px 0px 8px #f14668;
+    background-color: #f14668;
+}
+.notification.warn {
+    box-shadow: 0px 0px 8px #c2ce0d;
+    background-color: #c2ce0d;
+}
+
+#bmc-wbtn {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    right: 10px !important;
+    bottom: 10px !important;
+}
+
+element ~ div{
+    right: 85px !important;
+    bottom: 16px !important;
+    padding: 12px 16px !important;
+    max-width: 260px !important;
+    line-height: 1.35 !important;
+}
+
+
+.isrelative{
+    position: relative;
+}
+.isfixed.showBtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    left: 10px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 15px;
+    background: var(--main-colorDr2);
+    color: var(--font-color);
+    line-height: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.isfixed.showBtn.active{
+    border-radius: 0px 0 5px 5px;
+}
+.isfixed.showBtn.active ~ .menu{
+    padding: 10px;
+    height: fit-content;
+    box-shadow: 0px 0px 5px 2px var(--main-colorDr2);
+}
+.isfixed.showBtn.active ~ .menu *{
+    opacity: 1;
+    pointer-events: all;
+}
+.menu {
+    width: 200px;
+    height: 0;
+    background-color: var(--font-color);
+    position: fixed;
+    bottom: 60px;
+    left: 10px;
+    border-radius: 8px 8px 8px 0;
+    transition: 1.3s;
+}
+.menu *{
+    opacity: 0;
+    pointer-events: none;
+}
+.bLabel{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.menu select {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 5px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #fff;
+}
